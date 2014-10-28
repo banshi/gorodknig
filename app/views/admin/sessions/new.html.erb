@@ -1,17 +1,25 @@
-<h2>Register</h2>
+<div id="login-page">
+  <div class="container">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-login' }) do |f| %>
+      <h2 class="form-login-heading">sign in now</h2>
+      <div class="login-wrap">
+        <%= f.text_field :login, autofocus: true, placeholder: "Login", class: "form-control" %>
+        <br>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :login %><br />
-  <%= f.text_field :login, autofocus: true %></div>
+        <label class="checkbox">
+            <span class="pull-right">
+                <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+            </span>
+        </label>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+        <%= button_tag(type: 'submit', class: "btn btn-theme btn-block") do %>
+          <i class="fa fa-lock"></i> SIGN IN
+        <% end %>
+      </div>
+    <% end %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <%= render "admin/passwords/new" %>
 
-  <div><%= f.submit "Log in" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  </div>
+</div>

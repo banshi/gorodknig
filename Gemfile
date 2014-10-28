@@ -36,6 +36,8 @@ end
 gem 'haml', '~> 4.0.5'
 gem 'devise', '~> 3.4.0'
 gem 'annotate', '~> 2.6.5'
+gem 'simple_form', '~> 3.0.2'
+gem 'gritter', '~> 1.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

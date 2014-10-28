@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+unless Admin.find_by_username("admin")
+  Admin.create!(email: 'zastela.andrey@gmail.com', username: 'admin', password: 'T-k7^g6((7X2^SZ')
+  p 'Seeded admin'
+end

@@ -1,0 +1,10 @@
+- flash.each do |name, msg|
+  - name = :error if name == :alert
+  - if msg.is_a?(Array)
+    - msg.each do |m|
+      = js add_gritter(m, image: name) unless name == :timedout
+  - else
+    = js add_gritter(msg, image: name) unless name == :timedout
+- if resource.errors.any? && %w(passwords registrations sessions confirmations).include?(controller_name)
+  - resource.errors.full_messages.each do |error|
+    = js add_gritter(error, image: :error)
