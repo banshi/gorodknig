@@ -1,5 +1,5 @@
 - flash.each do |name, msg|
-  - name = :error if name == :alert
+  - name = :error if name.to_sym == :alert
   - if msg.is_a?(Array)
     - msg.each do |m|
       = js add_gritter(m, image: name) unless name == :timedout
