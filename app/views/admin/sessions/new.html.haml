@@ -1,13 +1,11 @@
+- content_for :title, t('authorization')
 #login-page
   .container
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-login" }) do |f|
-      %h2.form-login-heading sign in now
+      %h2.form-login-heading= t('authorization')
       .login-wrap
-        = f.input_field :login, required: false, placeholder: "Login", autofocus: true, class: "form-control"
+        = f.input_field :login, required: false, placeholder: t('login'), autofocus: true, class: "form-control"
         %br
-        = f.input_field :password, autocomplete: "off", required: false, placeholder: "Password", class: "form-control"
-        %label.checkbox
-          %span.pull-right
-            = link_to "Forgot Password?", "login.html#myModal", "data-toggle" => "modal"
-        %button{:type => "submit", :class => "btn btn-theme btn-block"} <i class="fa fa-lock"></i> SIGN IN
-    = render "admin/passwords/new"
+        = f.input_field :password, autocomplete: "off", required: false, placeholder: t('password'), class: "form-control"
+        %br
+        %button{:type => "submit", :class => "btn btn-theme btn-block"}= "<i class=\"fa fa-lock\"></i> #{t('sign_in')}".html_safe

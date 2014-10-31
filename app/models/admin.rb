@@ -5,8 +5,7 @@ class Admin < ActiveRecord::Base
 
   attr_accessor :login
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+  devise :database_authenticatable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
   def login=(login)
    @login = login

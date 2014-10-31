@@ -4,11 +4,12 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "Gorodknig Admin"
+    %title= content_for?(:title) ? yield(:title) : t('gorodknig_admin')
     = csrf_meta_tags
-    / Le HTML5 shim, for IE6-8 support of HTML elements
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /[if gt IE 9]
-      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+      = javascript_include_tag "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+      =javascript_include_tag "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
     = stylesheet_link_tag "admin", :media => "all"
   %body
     /  = bootstrap_flash
