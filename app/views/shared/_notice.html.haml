@@ -6,6 +6,6 @@
       = js add_gritter(m, image: name, title: I18n.t(title)) unless name == :timedout
   - else
     = js add_gritter(msg, image: name, title: I18n.t(title)) unless name == :timedout
-- if resource.errors.any? && %w(passwords registrations sessions confirmations).include?(controller_name)
+- if defined?(resource) && resource.errors.any? && %w(passwords registrations sessions confirmations).include?(controller_name)
   - resource.errors.full_messages.each do |error|
     = js add_gritter(error, image: :error)

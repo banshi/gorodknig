@@ -12,10 +12,11 @@
       = javascript_include_tag "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
     = stylesheet_link_tag "admin", :media => "all"
   %body
-    = yield
-    = javascript_include_tag "admin"
-    = render "shared/notice"
-    :javascript
-      $(document).ready( function() {
-        $.backstretch('#{asset_path('admin/login-bg.jpg')}', {speed: 500});
-      });
+    %section#container
+      = render "admin/shared/header"
+      %div#user_nav{ :style => "padding-top: 80px;" }
+        - if admin_signed_in?
+          = "Signed in as #{current_admin.email}. Not you? #{link_to 'Sign out', destroy_admin_session_path, method: :delete}".html_safe
+      = yield
+      = javascript_include_tag "admin"
+      = render "shared/notice"

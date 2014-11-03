@@ -8,13 +8,6 @@
 </head>
 <body>
 
-<div id="user_nav">
-  <% if admin_signed_in? %>
-    Signed in as <%= current_admin.email %>. Not you?
-    <%= link_to "Sign out", destroy_admin_session_path, method: :delete %>
-  <% end %>
-</div>
-
 <%= yield %>
 
 </body>

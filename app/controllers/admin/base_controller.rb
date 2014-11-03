@@ -1,5 +1,5 @@
 class Admin::BaseController < ActionController::Base
-  layout 'application'
+  layout 'admin'
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
