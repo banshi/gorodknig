@@ -480,6 +480,7 @@ ru:
   customer_details_updated: Данные клиента были обновлены.
   customer_search: Поиск клиента
   cut: Cut
+  dashboard: Панель управления
   dash:
     jirafe:
       app_id: ID приложения
@@ -587,7 +588,6 @@ ru:
   gateway_error: Ошибка платежного шлюза
   general: Основные
   general_settings: Общие настройки
-  gorodknig_admin: Административная часть интернет-магазина "Город Книг"
   google_analytics: Google Analytics
   google_analytics_id: Google Analytics ID
   guest_checkout: Гостевой заказ

@@ -1,3 +1,10 @@
 %header.header.black-bg
   %div.sidebar-toggle-box
     %div.fa.fa-bars.tooltips{"data-placement" => "right", "data-original-title" =>"Toggle Navigation"}
+  = link_to "<b>GORODKNIG ADMIN</b>".html_safe, admin_path, class: "logo"
+  %div.nav.notify-row#top_menu
+    %ul.nav.top-menu
+      %li.dropdown
+        =link_to '#' do
+          %i.fa.fa-tasks
+          %span.badge.bg-theme 4

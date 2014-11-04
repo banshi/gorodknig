@@ -1,4 +1,4 @@
-- content_for :title, t('authorization')
+- title 'authorization'
 #login-page
   .container
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-login" }) do |f|

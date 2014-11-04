@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : t('gorodknig_admin')
+    %title= content_for?(:title) ? yield(:title) : t('administration')
     = csrf_meta_tags
     / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /[if gt IE 9]
@@ -18,5 +18,5 @@
         - if admin_signed_in?
           = "Signed in as #{current_admin.email}. Not you? #{link_to 'Sign out', destroy_admin_session_path, method: :delete}".html_safe
       = yield
-      = javascript_include_tag "admin"
-      = render "shared/notice"
+    = javascript_include_tag "admin"
+    = render "shared/notice"
